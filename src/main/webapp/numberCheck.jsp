@@ -6,33 +6,35 @@
 <meta charset="UTF-8">
 <title>숫자-대문자 검사</title>
 <script type="text/javascript">
-	function chckForm()
+	function checkForm()
 	{
 		var f = document.loginForm;
 		
-		for(i=0; i<f.eng_name.value.length; i++)
+		for(i=0;i<f.eng_name.value.length;i++)
 			{
 				var ch = f.eng_name.value.charAt(i);
 				
-				if((ch < 'A' || ch > 'Z') && (ch > 'a' || ch < 'z') && (ch > '0' || ch < '9'))
+				if((ch < 'A' || ch > 'Z') && (ch > 'a' || ch < 'z') && (ch > '0' || ch <'9'))
 					{
-						alert("영문이름은 모두 글자를 대문자로만 입력해주세요");
+						alert("영문이름은 모든 글자를 대문자로만 입력해주세요");
 						f.eng_name.focus();
 						return false;
 					}
 			}
-		if(isNan(f.phone_number.value))
+		if(isNaN(f.phone_number.value))
 			{
-			alert("전화번호는 숫자만 입력해주세요.");
-			f.phone_number.focus();
-			return false;
+				alert("전화번호는 숫자만 입력해주세요.");
+				f.phone_number.focus();
+				return false;
 			
 			}
 		else return true;
 	}
 
-		
 </script>
+
+
+
 </head>
 <body>
 	<form name="loginForm" action="" method="get" onsubmit="return checkForm()">
